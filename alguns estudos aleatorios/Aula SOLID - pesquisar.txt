@@ -1,0 +1,30 @@
+solid é um dos principios do POO,
+
+
+				Solid
+
+"s" = Single Responsibility principle, uma classe deve somente ter um motivo para muda, e deve possuir uma unica responsabilidade dentro do software.(ex:
+uma classe para ordem de compra, outra para conexão com o banco, etc.)
+
+"O" = Open-Closed Principal, você deve estender um comportamento de classe sem modificalo,(objetos devem estar abertos para extensão, mas fechados para
+modificação. / quando novos comportamentos precisam ser adicionados no software, devemos estender e não alterar o código fonte original.)
+
+"L" = Liskov Substituition Principal, Classes derivados devem ser subtituiveis por suas classes base.(uma classe que tem herdeiros, deve ser substituida
+por qualquer um dos seus herdeiros, sem alterar as suas funcionalidades.) 
+
+"I" = Interface Segregation Principal, faça interface refinadas que são especificas do cliente.(Uma classe não deve ser forçada a implementar interfacees
+ e métodos que não serão utilizados. / É melhor criar interfaces mais especificas ao invés de termos uma única interdace genérica.) {ex: interface ave
+só vai ter os atributos bicar, chocarOvos. Por conta das aves que não voam, então criamos uma interfacer avesVoam e extendemos de aves adcionando o 
+atributo voar.
+
+"D" = Dependency Inversion Principal, depende de abstrações e não de implementações. (um módulo de alto nível não deve depender de módulos de baixo nível
+ambos devem depender de abstração. PS: inversão de dependência não é igual a injeção de dependência.)
+
+
+
+
+interface x classe
+
+implements x extends
+
+@override

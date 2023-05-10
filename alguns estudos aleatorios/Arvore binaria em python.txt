@@ -1,0 +1,32 @@
+
+class No:
+    def __init__(self, chave):
+        self.chave = chave
+        self.esq = None
+        self.dir = None
+        
+
+
+def insere(raiz, no):
+    if raiz is None:
+        raiz = no
+    
+    elif raiz.chave < no.chave:
+        if raiz.dir is None:
+            raiz.dir = no
+        else:
+            insere(raiz.direita, no)
+    
+    else:
+        if raiz.esq is None:
+            raiz.esq = no
+        else:
+            insere(raiz.esq, no)
+            
+
+
+raiz = No(40)
+
+insere(raiz, No(30))
+
+insere(raiz, No(20))

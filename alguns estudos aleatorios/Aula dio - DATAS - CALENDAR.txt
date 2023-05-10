@@ -1,0 +1,111 @@
+
+Manipular datas, formatar datas, evolução do tratamento de datas no java.
+
+pacote   java.util.date
+
+contrutor date
+date()
+date(long date)
+
+date() = quando instanciado "Date hoje = new Date();" ele vai alocar o objeto e o inicializara com o milissegundo mais próximo do perido de execução. 
+proximidade de milissigundo.ex: 
+dentro de uma classe já com main e a classe, terá:
+
+	Date novaData = new Date();
+	System.out.println(novaData);
+    		//retorno seria: Sat Apr 02 22:10:56 BRT 2021
+
+
+
+Date(long date) = diferente de date(), esse ele espera que você coloque as datas! aqui nesse caso preencheremos com milissegundos,
+com sua referência em 1 de janeiro de 1970 = "00:00:00" = padrão Epoch.
+Epoch é um padrão para representar uma data como um inteiro de 32-bits a partir da data de referencia(01 de 01 de 1970).
+ex:
+	Long currentTimeMillis = System.currentTimeMillis();		// gera um valor de 32 beats que tem a diferença, em milissegundos, entre a data/hora atual e 1 de janeiro de 1970, à meia-noite
+	
+	System.out.println(currentTimeMillis);				//escreve o valor gerado pelo System.currentTimeMillis
+	1563127311564
+	
+	Date novaData = new Date(currentTimesMillis);			converte "1563127311564" em "Sun jul 14 15:01:51 BRT 2019"
+
+
+getTime() retorna data em milissegundos.
+setTime(long) define uma data com base em milissegundos
+
+
+
+	Sun jul 14 15:01:51 BRT 2019	data retornada
+
+	# pesquisar : after e before / compareTo e equals / from e tolnstant
+
+	/#after = Data maiores
+	 bfore = antes menor
+	
+
+	Date dataAtualSistema = new Date(System.currenteTimeMillis());	// adicionando data atual(System.currentTimeMillis) ao objeto(dataAtualSistema)
+		(dataDigitado.before(dataAtualSistema))  		// comparando se a dataDigitada é anterior a data atual.
+		(dataDigitada.after(dataAtualSistema))			//comparando se a dataDigitada é maior que a data atual.
+
+	/#equals = compara, passando true ou false
+	  compareTo = compara dois objetos, passando a resposta em forma numérica, se for menor o número após a
+	 execução sera um número negativo, se igual o número será 0, se mario o número será positivo, maior que 0.
+	
+	equals ex: 
+	boolean exemploEquals = novaData.equals(currentTimeMillis);
+	System.out.println(exemploEquals);     //false
+	
+	compareTo ex:
+	String palavra1 = "OLA";
+	String palavra2 = "ola";
+	int num = palavra1.compareTo(palavra2);
+		if(num<0)      {System.out.println("palavra1 é menor que palavra2");}
+
+		else(num==0)   {System.out.println("palavra1 é igual palavra2");}
+
+		else(num>0)    {System.out.println("palavra1 é maior que palavra2");}
+
+
+
+
+
+
+
+
+
+
+	*******CALENDAR******
+
+	classe abstrata que converte data e instante especifico.calendar  month, year, hour, etc.
+
+	biblioteca  java.util.Calendar;
+
+		Calendar agora = Calendar.getInstance();	//instanciando a classe Calendar, criando "agora" 
+		
+		System.out.println("A data correta é : " + agora.getTime());
+			// Saída será ex: Sun Jul 14 20:50:31 BRT 2019
+
+		
+		agora.add(Calendar.DATE, amount:-15);			//retorna 15 dias na data "agora"
+		System.out.println("15 dias atrás: " + agora.getTime());
+			// Saída será ex: Sun Jun 30 20:50:31 BRT 2019
+
+	
+		// agora.add(Calendar.DATE, amount:-15);			//retorna 15 dias na data "agora"	
+		//agora.add(Calendar.MOUNTH, amount:4);				//adiciona 4 mêses na data "agora"
+		//agora.add(Calendar.YEAR, amount:2);				//adiciona 2 anos na data "agora"
+
+
+		imprimir data e hora mais legivel com Calendar:
+		
+		Calendar agora = Calendar.getInstance();	//instanciando a classe Calendar, criando "agora" 
+		System.out.println("%tc\n", agora);
+			//Dom jul 14 20:58:11 BRT 2019
+		System.out.println("%tF\n", agora);
+			//2019-07-14
+		System.out.println("%tD\n", agora);
+			//07/14/19
+		System.out.println("%tr\n", agora);
+			//08:58:11 PM
+		System.out.println("%tT\n", agora);
+			//20:58:11				
+		

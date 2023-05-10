@@ -1,0 +1,22 @@
+
+	Exceção são erros que ocorrem durante o 
+proessamento de um metodo que podem ser esperados
+ ou não. Falhas que não devem ocorrer 
+rotineiramente no fluxo de um sistema.	
+	 
+	
+	exemplo de tratamento de exceção:
+ 
+   *******************
+	public static void metodo() {
+	
+		try{
+			new java.io.FileInputStream("arquivo.txt");
+		}  catch (java.io.FileNotFoundException e) {
+			System.out.println("Nao foi possivel abrir o arquivo para leitura");
+		   }
+	}
+   ******************** 
+
+
+ 

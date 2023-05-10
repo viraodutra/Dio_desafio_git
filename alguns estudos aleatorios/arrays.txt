@@ -1,0 +1,64 @@
+	Array, é uma estrutura de dados que organizam valores na memória, memórias de um mesmo tipo.	
+	Se encontra na biblioteca java.util
+	Cada item no array é chamado de elemento, cada um sendo acessado pela sua posição no caso o numero,
+que se inicia com o número 0. 
+	Arrays após se craidos, não poderá alterar o tamanho, apenas criando um novo.
+	
+
+	***declarando arrays***
+	int[] meuArray = new int[7];	// declara array com o nome de meuArray com 7 posições.
+	
+	int[] meuArray = {01,25,36,47,58,69}; 	//declara array meuArray tipo inteiro, com 6 posições
+já cada um com um valor.
+
+	***alterar valor de elemento do array***
+
+	Escolhe a posição do elemento que deseja alterar, e passa um novo valor.
+	
+	int[] meuArray = {01,25,36,47,58,69}; 	//declara array meuArray tipo inteiro, com 6 posições
+	
+	meuArray[1] = 31;	//pegou a posição 1(valor 25) e subrescreveu o valor 31.
+
+	*******-----*******---
+	
+	(array.length)		medir o tamanho do array. Ver a quantidade de elementos.
+
+	System.out.println(meuArray.length); 
+
+
+	
+	***percorrendo arrays.
+
+	utiliza uma variavel de controle, que vai do 0 ao número de posições do array.
+	
+	public class MyClass{
+	  public static void main(String []args){
+	    int[]meuArray = {11,13,17,25,29,34,36,50};
+	    for(int i=0;i<7;i++){
+	       System.out.println(meuArray[i]);
+	    }	
+	
+	}
+	}
+
+
+	***********------------**********----------
+
+
+	*arrays multidimensionais        //é um array que contem arrays internos
+	ex:
+	int[][] meuArrayMulti = {{1,2,3,4},{5,6,7}};		//array com dois arrays como elementos.
+
+	
+	
+
+	*percorrendo arrays multidimensionais
+	
+	public class MyClass{
+	  public static void main(String []args){
+	    int[][]meuArrayMulti = {{1,2,3,4},{5,6,7}};
+	    for (int i=0;i<meuArrayMulti.length;i++){
+	      for(int j =0;j<meuArrayMulti[i].length;j++){
+		System.out.println(meuArrayMulti[i][j]);
+	      }}    
+	}}
